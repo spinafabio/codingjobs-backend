@@ -1,46 +1,58 @@
+For this exercise, books table have one more attribute : date_of_release
+
 Part 1 :
 
-- Get all the information from each movie
+- Get all the information from each books
 
-- Get the title of each movie
+- Get the title of each book
 
-- Get the title and year of release of each movie
+- Get the title and date of release of each book
 
 Part 2 :
-- Retrieve the title of each movie, sorted alphabetically
+- Retrieve the title of each book, sorted alphabetically
 
-- List all directors in alphabetical order and without duplicate
+- List all authors in alphabetical order and without duplicate
 
 Part 3:
-- Recover the movie with id 5
+- Recover the book with id 5
 
-- Find movies released between 2000 and 2010
+- Find books released between 2000 and 2010
 
-- Find movies that did not come out between '2000' and '2010'
+- Find books that did not come out between '2000' and '2010'
 
 Part 4:
-- Recover all movies "Back to the future"
+- Recover all books "Lord of the ring"
 
-- Get all the movies from the director "George Lucas"
+- Get all the books from the author "Tolkien"
 
-- Get all the director's films that are not "George Lucas"
+- Get all the author's books that are not "Tolkien"
+
+P.S. : (replace LOTR/Tolkien by something else if u want)
 
 Part 5:
-- Recover all movies from newest to oldest
+- Recover all books from newest to oldest
 
-- Get the number of films by director
+- Get the number of books by author
 
 Part 6
-- List only the first 5 movies
+- List only the first 5 books
 
-- List the last 4 films (from newest to oldest)
+- List the last 4 books (from newest to oldest)
 
 Part 7:
-- Get the sum of the views of all the movies.
+- Get the sum of all the book's price (total amount of all books)
 
-- Get the sum of the views of all the films of the director 'George Lucas'
+- Get the sum of books price PER author_id. 
 
-- Get the sum of views by director
+- Get the total number of how many orders you had
+
+- Get the number of orders PER user_id
 
 Part 8:
-- All of George Lucas's films made 100000 more hits at the box office. Update these movies.
+- Update all bookS with author_id = 2.
+Those books all cost now 10.
+
+- Update all bookS with author_id = 5.
+Those books all cost now 5 more euro than previous price.
+
+
