@@ -1,0 +1,19 @@
+For this exercise, you'll need to learn a new topic : INNER JOIN
+Usefull ressources : https://sql.sh/cours/jointures
+
+
+- Get all the books title with the author's name
+
+- Get all book's title and author's name only when price is lower than 15
+
+- Get all book's title and author's name only for author that have an 'e' in their name.
+
+- Get all orders global informations WITH the name of the user
+
+- Try to display all 'order_details' with order_id, book title, quantity and order date.
+
+- For each order, I want to display the id (order id), date, payment_method and number of books that was placed in that order.
+
+- For each order, I want to display the total amount/expanse.
+For this, you have to SUM the price of all books for each order.
+

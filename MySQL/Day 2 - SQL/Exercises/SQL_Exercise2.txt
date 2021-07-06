@@ -1,11 +1,19 @@
 -- Explanation :
 
 Now, there is a 'series' table that has the same fields as the 'movies' table.
+Here is the details of tables :
 
+	Directors
+	------
+	director_id, name, date_of_birth, bio
+
+	Movies
+	------
+	movie_id, title, year_released, views, #director_id
 
 	Series
 	------
-	serie_id, title, year_released, views, director_id
+	serie_id, title, year_released, views, #director_id
 
 
 -- Queries :
