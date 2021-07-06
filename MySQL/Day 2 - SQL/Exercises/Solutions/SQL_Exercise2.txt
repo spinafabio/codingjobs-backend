@@ -19,6 +19,12 @@ Here is the details of tables :
 -- Queries :
 	- Recover all series and all movies in one query.
 
+		SELECT title, year_released, views
+		FROM series
+		UNION
+		SELECT title, year_released, views
+		FROM movies
+
 	- Collect all series and all movies from 2018
 
 	- Collect all the series and all the films with the director.
