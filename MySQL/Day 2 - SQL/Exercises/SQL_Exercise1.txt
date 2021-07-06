@@ -1,0 +1,46 @@
+Part 1 :
+
+- Get all the information from each movie
+
+- Get the title of each movie
+
+- Get the title and year of release of each movie
+
+Part 2 :
+- Retrieve the title of each movie, sorted alphabetically
+
+- List all directors in alphabetical order and without duplicate
+
+Part 3:
+- Recover the movie with id 5
+
+- Find movies released between 2000 and 2010
+
+- Find movies that did not come out between '2000' and '2010'
+
+Part 4:
+- Recover all movies "Back to the future"
+
+- Get all the movies from the director "George Lucas"
+
+- Get all the director's films that are not "George Lucas"
+
+Part 5:
+- Recover all movies from newest to oldest
+
+- Get the number of films by director
+
+Part 6
+- List only the first 5 movies
+
+- List the last 4 films (from newest to oldest)
+
+Part 7:
+- Get the sum of the views of all the movies.
+
+- Get the sum of the views of all the films of the director 'George Lucas'
+
+- Get the sum of views by director
+
+Part 8:
+- All of George Lucas's films made 100000 more hits at the box office. Update these movies.
