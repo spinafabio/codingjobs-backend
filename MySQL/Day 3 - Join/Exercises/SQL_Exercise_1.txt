@@ -1,7 +1,7 @@
 Part 1 :
 
     Import the movie_db.sql file.
-    Or you your own movie db.
+    Or use your own movie db.
 
 Part 2 :
 	- Retrieve the name and the year of birth of each director
