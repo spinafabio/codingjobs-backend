@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le :  mar. 06 juil. 2021 à 13:52
--- Version du serveur :  5.7.25
--- Version de PHP :  7.3.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le : mer. 07 juil. 2021 à 08:28
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `movie_db`
+-- Base de données : `movie_db`
 --
 CREATE DATABASE IF NOT EXISTS `movie_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `movie_db`;
@@ -28,20 +29,23 @@ USE `movie_db`;
 -- Structure de la table `directors`
 --
 
-CREATE TABLE `directors` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `directors`;
+CREATE TABLE IF NOT EXISTS `directors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `nationality` enum('USA','Luxembourg','France','Italy') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nationality` enum('USA','Luxembourg','France','Italy') DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `directors`
 --
 
-INSERT INTO `directors` (`id`, `name`, `nationality`) VALUES
-(1, 'David Finch', 'USA'),
-(2, 'George Lucas', 'USA'),
-(4, 'steveeeeeeen', NULL);
+INSERT INTO `directors` (`id`, `name`, `nationality`, `birth_date`) VALUES
+(1, 'David Finch', 'USA', '1971-07-07'),
+(2, 'George Lucas', 'USA', '1962-07-18'),
+(4, 'steveeeeeeen', NULL, '2010-07-16');
 
 -- --------------------------------------------------------
 
@@ -49,13 +53,16 @@ INSERT INTO `directors` (`id`, `name`, `nationality`) VALUES
 -- Structure de la table `movies`
 --
 
-CREATE TABLE `movies` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `movies`;
+CREATE TABLE IF NOT EXISTS `movies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(40) NOT NULL,
   `views` int(11) DEFAULT NULL,
   `director_id` int(11) NOT NULL,
-  `poster` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `poster` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `director_id` (`director_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `movies`
@@ -72,39 +79,6 @@ INSERT INTO `movies` (`id`, `title`, `views`, `director_id`, `poster`) VALUES
 (14, 'Newwwwwww', 123, 1, 'poster.jpg');
 
 --
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `directors`
---
-ALTER TABLE `directors`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `movies`
---
-ALTER TABLE `movies`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `director_id` (`director_id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `directors`
---
-ALTER TABLE `directors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `movies`
---
-ALTER TABLE `movies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
 -- Contraintes pour les tables déchargées
 --
 
@@ -113,6 +87,7 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `movies`
   ADD CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`director_id`) REFERENCES `directors` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
