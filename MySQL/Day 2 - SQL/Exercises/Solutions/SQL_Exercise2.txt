@@ -29,6 +29,12 @@ Here is the details of tables :
 
 	- Collect all the series and all the films with the director.
 
+		SELECT title, year_released, views, director_id
+		FROM series
+		UNION
+		SELECT title, year_released, views, director_id
+		FROM movies
+
 	- Get the number of views per director (movies and series combined).
 
 	- Get the total view number for all movies AND all series (movies and separate series).

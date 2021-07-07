@@ -5,8 +5,13 @@ Part 1 :
 
 Part 2 :
 	- Retrieve the name and the year of birth of each director
+		SELECT name, YEAR(birth_date)
+		FROM directors
 		
 	- Retrieve directors under 50 years old.
+		SELECT name
+		FROM directors
+		WHERE YEAR(NOW()) - YEAR(birth_date) < 50
 
 	- Retrieve the directors of American nationality
 	
@@ -19,9 +24,15 @@ Part 3:
 
 Part 4:
 	- For each movie, Retrieve its title, its year of release and the name of the director
-	
+		SELECT title, year_of_release, name
+		FROM movies m
+		INNER JOIN directors d ON d.id = m.director_id
+
 	- For each movie, get all the information about it and the name of the director
-		
+		SELECT m.*, name
+		FROM movies m
+		INNER JOIN directors d ON d.id = m.director_id
+
 	- Get the title of each movie and the name of the director, sorted alphabetically on the title of the movie.
 
 	- Same but sorted on the director's name.
