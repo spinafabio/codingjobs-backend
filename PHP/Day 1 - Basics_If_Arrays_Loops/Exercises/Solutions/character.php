@@ -47,7 +47,6 @@ Use an associative array.
 
     <img src="<?php echo $avatar; ?>" alt="" width="100px">
 
-
     <?php
 
         if($characteristics['atk'] > 9 OR $characteristics['def'] > 9) {
@@ -56,6 +55,9 @@ Use an associative array.
             </div>';
         }
 
+        foreach ($characteristics as $key => $value) {
+            echo $key . ' : ' . $value . '<br>';
+        }
     ?>
 
 
