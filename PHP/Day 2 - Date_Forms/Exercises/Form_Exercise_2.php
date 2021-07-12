@@ -17,6 +17,3 @@
 	2.4 :
 	Display the multiplication table in a nice HTML format table style.
 */
-
-
- ?>
