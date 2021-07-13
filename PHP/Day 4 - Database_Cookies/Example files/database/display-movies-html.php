@@ -20,19 +20,41 @@ if ($conn) {
 
     // 4. Fetch the results in a associative array
     $movies = mysqli_fetch_all($results, MYSQLI_ASSOC);
-    /*echo '<pre>';
-    var_dump($movies);
-    echo '</pre>';*/
-
-    // Loop through all movies and display title/date
-    foreach ($movies as $movie) {
-        echo 'Title : ' . $movie['title'] . '<br>';
-        echo 'Release date : ' . $movie['date_of_release'] . '<br>';
-        echo '<hr>';
-    }
 } else {
     echo 'Pb with connection !';
 }
 
 // Close the connection (you can close anywhere in the file)
 mysqli_close($conn);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <?php foreach ($movies as $movie) : ?>
+        <p>
+            <strong>Title :</strong>
+            <!-- Same thing as echo -->
+            <?= $movie['title']; ?>
+        </p>
+
+
+        <p>
+            <strong>Date :</strong>
+            <?php echo $movie['date_of_release']; ?>
+        </p>
+        <hr>
+    <?php endforeach; ?>
+</body>
+
+</html>
