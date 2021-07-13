@@ -132,6 +132,21 @@ Example :
 
 */
 
+function htmlImages($src)
+{
+	echo "<img src='$src' alt='' width='100px'>";
+
+	/*
+	Doesnt work : 
+	echo '<img src="$src" alt="" width="100px">';
+
+	Work if use concatenation : 
+	echo '<img src="' . $src . '" alt="" width="100px">';
+	*/
+}
+
+htmlImages('banana.png');
+
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 6 </p>';
 
@@ -153,6 +168,15 @@ Write a function that:
     - Call your function with a single number: 4
 */
 
+echo multi(10, 2);
+echo multi(4);
+echo multi();
+
+function multi($x = 2, $y = 1)
+{
+	return ($x * $y);
+}
+
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
 
@@ -161,7 +185,7 @@ echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
 	Write a PHP function that return the reverse(mirror) of an array.
 	You can use only one other variable (simple, no array).
 	You can only use count() or strlen() function.
-
+ 
 
 	HINT : How to swith two values
 	Giving 2 variables $x and $y
@@ -174,3 +198,19 @@ echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
 	$x = $y // x = 10
 	$y = $z // y = 5
 */
+
+$myArray = [5, 7, 10, 6];
+var_dump(reverse($myArray));
+
+function reverse($array)
+{
+	$length = count($array) - 1;
+
+	for ($i = 0; $i < $length / 2; $i++) {
+		$temp = $array[$length - $i];
+		$array[$length - $i] = $array[$i];
+		$array[$i] = $temp;
+	}
+
+	return $array;
+}
