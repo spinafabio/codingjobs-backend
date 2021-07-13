@@ -1,5 +1,24 @@
 <?php
 
+// Use function
+$array = [5, 6, 9, 3, 10];
+isOrder($array);
+
+
+// Declare function 
+function isOrder($array)
+{
+
+	for ($i = 0; $i < count($array); $i++) {
+		// Check if ordered or not
+		if ($array[$i] > $array[$i + 1])
+			return false;
+	}
+
+	return true;
+}
+
+
 /*
 -- Exercise 1 : 
 	Write a function 'isOrder' that :
