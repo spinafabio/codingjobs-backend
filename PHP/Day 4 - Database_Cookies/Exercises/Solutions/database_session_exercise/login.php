@@ -1,3 +1,9 @@
+<?php
+// start the session before any HTML tag:
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,9 +42,12 @@
             $results = mysqli_query($conn, $query);
             // 3. Look if you have a result or not (false).
             // mysqli_num_rows($result) : return number of results
-            if (mysqli_num_rows($results) > 0)
+            if (mysqli_num_rows($results) > 0) {
                 echo 'User exists !';
-            else
+
+                // Saving the email 
+                $_SESSION['email'] = $_POST['email'];
+            } else
                 echo 'User doesnt exists in our DB !';
         }
     }
