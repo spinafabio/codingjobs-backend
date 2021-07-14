@@ -11,6 +11,11 @@
 <body>
     <h2>Account page</h2>
     <?php
+
+    // Log out must be first (otherwise, you will still display user's information)
+    if (isset($_POST['logoutBtn']))
+        session_destroy();
+
     /*
         1 - Check if the user logged in before
         For this, check if(session['email']) exists
@@ -32,7 +37,12 @@
         3 - If he logged-in, display 'Hello, username'
         Use echo
     */
+
     ?>
+
+    <form action="" method="POST">
+        <input type="submit" name="logoutBtn" value="Log out">
+    </form>
 </body>
 
 </html>
