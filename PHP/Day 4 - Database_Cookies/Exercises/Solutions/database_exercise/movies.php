@@ -55,6 +55,9 @@ mysqli_close($conn);
             <strong>Date :</strong>
             <?php echo $movie['date_of_release']; ?>
         </p>
+
+        <!-- Link to 'Movie detail' page, URL needs the id of the movie -->
+        <a href="movie.php?id=<?= $movie['id']; ?>">Detail page</a>
     <?php endforeach; ?>
 </body>
 
