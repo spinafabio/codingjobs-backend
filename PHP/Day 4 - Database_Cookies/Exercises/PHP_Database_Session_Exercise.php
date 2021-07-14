@@ -18,6 +18,7 @@
     Step 3: 
 		Once the user submit the login form, you have to :
 			- Check if email is not empty.
+			- Check if user exists in DB
 			- Open a session.
 			- In this session, save the email adress.
 
