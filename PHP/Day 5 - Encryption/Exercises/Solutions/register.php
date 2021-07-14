@@ -51,7 +51,24 @@
         if ($errors == false) {
             // password must be hashed
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            echo 'Inserting !!!!';
+
+            // Create variables for the query (easier to use)
+            $userName = $_POST['username'];
+            $userMail = $_POST['email'];
+
+            // 1. Connect to my DB
+            $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
+            $query = "INSERT INTO users(username, email, password)
+            VALUES('$username', '$userMail', '$hashedPassword')";
+
+            // 2. Execute the query
+            $result = mysqli_query($conn, $query);
+
+            // INSERT/UPDATE/DELETE returns true OR false
+            if ($result)
+                echo 'Successfully inserted in the DB';
+            else
+                echo 'Problem inserting in the DB';
         }
     }
     ?>
