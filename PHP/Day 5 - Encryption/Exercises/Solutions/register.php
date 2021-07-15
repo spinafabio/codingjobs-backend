@@ -59,7 +59,7 @@
             // 1. Connect to my DB
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
             $query = "INSERT INTO users(username, email, password)
-            VALUES('$username', '$userMail', '$hashedPassword')";
+            VALUES('$userName', '$userMail', '$hashedPassword')";
 
             // 2. Execute the query
             $result = mysqli_query($conn, $query);
