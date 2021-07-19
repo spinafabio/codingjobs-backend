@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 19 juil. 2021 à 14:12
+-- Généré le : lun. 19 juil. 2021 à 14:38
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.11
 
@@ -39,6 +39,20 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Déchargement des données de la table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `description`, `price`, `picture`, `category`) VALUES
+(1, 'Best computer', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 500, '', 'Computer'),
+(2, 'Asus x400', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 800, '', 'Computer'),
+(3, 'iPhone 12', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1200, '', 'Phones'),
+(4, 'Huawei P30', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 30, '', 'Phones'),
+(5, 'Corsair HeadSet G30', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 100, '', 'Headphones'),
+(6, 'Corsair K90', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 90, '', 'Keyboards'),
+(7, 'HyperX 700', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 70, '', 'Headphones'),
+(8, 'Roccat P70', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 70, '', 'Keyboards');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -56,7 +70,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

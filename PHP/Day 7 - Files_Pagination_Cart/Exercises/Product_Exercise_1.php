@@ -1,4 +1,4 @@
-<?php 
+<?php
 		/*
 
         -- Exercise : 
@@ -21,5 +21,3 @@
 			Create button so that we can navigate through all the products.
 
     */
-
-?>
