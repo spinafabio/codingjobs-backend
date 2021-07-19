@@ -55,17 +55,6 @@ Example :
 
 */
 
-function isPalindrome($str)
-{
-	// DO NOT DO THIS (if you can avoid): 
-	$reverse = strrev($str);
-
-	if ($reverse == $str)
-		return 'Palindrome !';
-	else
-		return 'Not a palindrome';
-}
-
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 4 </p>';
 
