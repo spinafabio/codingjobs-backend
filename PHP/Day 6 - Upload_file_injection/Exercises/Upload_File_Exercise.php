@@ -15,5 +15,3 @@
 		3. Create the PHP code that will save the file on the server ('uploads' folder)
 		4. Grab the name of the image (only the name) and save it as user 'poster' 
 */
-
-?>		

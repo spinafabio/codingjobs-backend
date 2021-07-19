@@ -10,10 +10,12 @@
 
 <body>
     <h2>Register page</h2>
-    <form action="" method="post">
+    <form enctype="multipart/form-data" action="" method="post">
         <input type="text" name="username" placeholder="Username"><br>
         <input type="email" name="email" placeholder="Email"><br>
         <input type="password" name="password" placeholder="Password"><br>
+
+        Profile image : <input type="file" name="myFile"><br>
 
         <input type="submit" name="registerBtn" value="Register">
     </form>
@@ -52,15 +54,47 @@
             $errors = true;
         }
 
+        // File problem
+        if ($_FILES['myFile']['error'] != UPLOAD_ERR_OK) {
+            echo 'Error during upload';
+            // die() : stop and exit the script;
+            $errors = true;
+        }
+
         // Insert only if no errors
         if ($errors == false) {
+
+            $extFoundInArray = array_search($_FILES['myFile']['type'], array(
+                'jpg' => 'image/jpeg',
+                'png' => 'image/png',
+                'gif' => 'image/gif'
+            ));
+
+            if ($extFoundInArray == false)
+                echo 'File must be image !';
+            else {
+
+                // Rename the file
+                $shaFile = sha1_file($_FILES['myFile']['tmp_name']);
+                $destinationDir = 'uploads/';
+                $nbFile = 0;
+
+                do {
+                    $fileName = $shaFile . $nbFile . '.' . $extFoundInArray;
+                    $destinationPath = $destinationDir . $fileName;
+                    $nbFile++;
+                } while (file_exists($destinationPath));
+
+                // Try to move/save permanently the file
+                move_uploaded_file($_FILES['myFile']['tmp_name'], $destinationPath);
+            }
             // password must be hashed
             $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
             // 1. Connect to my DB
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
-            $query = "INSERT INTO users(username, email, password)
-            VALUES('$userName', '$sanitizedMail', '$hashedPassword')";
+            $query = "INSERT INTO users(username, email, password, poster)
+            VALUES('$userName', '$sanitizedMail', '$hashedPassword', '$fileName')";
 
             // 2. Execute the query
             $result = mysqli_query($conn, $query);
@@ -72,7 +106,15 @@
                 echo 'Problem inserting in the DB';
         }
     }
+
+    /* 
+    Here we are saving the name of the file (not the full path).
+    We need to take care of this when showing the image later on.
+    Ex: <img src="uploads/<?= $user['poster']?>" alt="">
+    */
     ?>
+
+
 </body>
 
 </html>
