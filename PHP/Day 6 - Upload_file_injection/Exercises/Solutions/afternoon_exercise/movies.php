@@ -8,9 +8,13 @@ $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
 
 // Did I connect successfully ? 
 if ($conn) {
+    $query = 'SELECT * FROM movies';
 
     // 2. Prepare the query
-    $query = 'SELECT * FROM movies';
+    if (isset($_POST['searchBox'])) {
+        $mySearch = $_POST['searchBox'];
+        $query = "SELECT * FROM movies WHERE title LIKE '%$mySearch%'";
+    }
 
     // 3. Executing the query (send the query to the DB)
     $results = mysqli_query($conn, $query);
@@ -44,7 +48,7 @@ mysqli_close($conn);
     <h4>Search for a movie : </h4>
     <form action="" method="post">
         <input type="text" name="searchBox" placeholder="Start typing title">
-        <input type="submit" value="Search">
+        <input type="submit" name="searchBtn" value="Search">
     </form>
 
     <?php foreach ($movies as $movie) : ?>
