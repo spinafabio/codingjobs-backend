@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX Example</title>
+    <title>New Movie</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
 </head>
 <body>
+    <h2>Insert a new movie</h2>
 
     <div id="result"></div>
-
     <form action="" method="post">
-        <input type="submit" id="myBtn" value="Click me">
-    </form>
+        <input type="text" name="title" placeholder="Title"><br>
+        <input type="date" name="date_of_release" placeholder="Date of release"><br>
+        <input type="number" name="director_id" placeholder="Director id"><br>
 
+        <input type="submit" value="Add a movie">
+    </form>
 
     <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -22,20 +33,18 @@
 
   <script>
       /* Wait for the page to be loaded/ready */
-       
-        $('#myBtn').click(function(e) {
+      $(function(){
+        $('form').submit(function(e) {
             e.preventDefault();
             
-            // Ajax call : ask a php file for something
+            // Ajax call
             $.ajax({
-               url: 'simple.php' ,
+               url: 'insert-movie.php' ,
                method: 'post',
+               data: $("form").serialize(),
             })
             .done(function (result) {
-                //Everything that you display/echo/write down in the 'simple.php' file will be send back here in the 'result' variable
-                
                 // If AJAX call worked
-                //console.log(result);
                 $('#result').html(result);
             })
             .fail(function (result) {
