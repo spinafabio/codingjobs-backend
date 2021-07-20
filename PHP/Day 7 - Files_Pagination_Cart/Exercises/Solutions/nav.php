@@ -4,7 +4,7 @@
             <a href="products.php">Products</a>
         </li>
         <li>
-            Cart(x)
+            Cart(<?= $number ?>)
         </li>
     </ul>
 </nav>

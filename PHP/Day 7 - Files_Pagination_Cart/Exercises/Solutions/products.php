@@ -42,8 +42,10 @@ if ($conn) {
 
 
 // Click on 'add to cart' button
+session_start();
+$number = 0;
+
 if (isset($_POST['cartBtn'])) {
-    session_start();
     // Retrieve all informations about the product
     $query = "SELECT * FROM product WHERE id = " . $_POST['productId'];
     $results = mysqli_query($conn, $query);
@@ -55,6 +57,10 @@ if (isset($_POST['cartBtn'])) {
         'price' => $product['price']
     );
 }
+
+// Only if there is a cart and its not empty
+if (isset($_SESSION['cart']) && !empty($_SESSION['cart']))
+    $number = count($_SESSION['cart']);
 
 // Close the connection (you can close anywhere in the file)
 mysqli_close($conn);
@@ -72,7 +78,7 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <?php require_once 'nav.html'; ?>
+    <?php require_once 'nav.php'; ?>
 
     <h2>Products list</h2>
 
