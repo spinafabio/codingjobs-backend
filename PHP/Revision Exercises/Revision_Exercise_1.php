@@ -5,6 +5,14 @@
 	2. Display the type AND the value of each variable (using only one function)
 */
 
+$x = 5;
+$y = "1";
+$z = true;
+$n = 2.5;
+$z = $x + $y;
+$k = $n * $y;
+
+
 /*
 	Show the date (in a nice format) for :
 		- Today
