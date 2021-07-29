@@ -2,12 +2,12 @@
 
 $movies = array(
     array(
-        "Jurassic Park",
-        2018
+        "title" => "Jurassic Park",
+        "date" => 2018
     ),
     array(
-        "Fight Club",
-        1998
+        "title" => "Fight Club",
+        "date" => 1998
     )
 );
 

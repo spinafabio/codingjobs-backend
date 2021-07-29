@@ -1,12 +1,10 @@
-{
-    "movies": [
-        {
-            "title": "Jurassic Park",
-            "date": 2018
-        },
-        {
-            "title": "Kaamelot",
-            "date": 2021
-        }
-    ]
-}
+[
+    {
+        "title": "Jurassic Park",
+        "date": 2018
+    },
+    {
+        "title": "Kaamelot",
+        "date": 2021
+    }
+]
