@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users connection</title>
+</head>
+
+<body>
+    <h3>Json exercise 2</h3>
+
+    <div id="success"></div>
+
+    <form action="" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <span id="error_name"></span>
+        <br>
+        <input type="email" name="mail" placeholder="Mail">
+        <span id="error_mail"></span>
+        <br>
+
+        <input type="submit" value="SEND">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        /* Wait for the page to be loaded/ready */
+        $(function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+
+                // Ajax call
+                $.ajax({
+                    url: 'check_users.php',
+                    method: 'post',
+                    data: $("form").serialize(),
+                    dataType: 'json'
+                })
+                    .done(function (result) {
+                        // Cleaning all placeholders
+                        $('#success').html('');
+                        $('#error_name').html('');
+                        $('#error_mail').html('');
+
+                        // Display msg on the correct placeholder
+                        if (result.success) {
+                            $('#success').html(result.success);
+                        } else {
+                            $('#error_name').html(result.name);
+                            $('#error_mail').html(result.mail);
+                        }
+
+                    })
+                    .fail(function (result) {
+                        console.log('AJAX FAILED');
+                    })
+            });
+        });
+
+    </script>
+</body>
+
+</html>
