@@ -1,14 +1,18 @@
 [
 	{
-		"name" : "simon",
-		"mail" : "simon@simon.fr"
+		"name": "ambroise",
+		"mail": "ambroise_is_the_best@gmail.com"
 	},
 	{
-		"name" : "john",
-		"mail" : "john@gmail.com"
+		"name": "simon",
+		"mail": "simon@simon.fr"
 	},
 	{
-		"name" : "iveta",
-		"mail" : "iveta@gmail.com"
+		"name": "john",
+		"mail": "john@gmail.com"
+	},
+	{
+		"name": "iveta",
+		"mail": "iveta@gmail.com"
 	}
 ]
