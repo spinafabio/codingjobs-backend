@@ -19,14 +19,27 @@ if (!empty($_POST)) {
         // sTEP 2 Deserialize
         $users = json_decode($fileContent);
 
+        // User exists ?
+        $userExists = false;
+
         foreach ($users as $position => $user) {
             // each user ! we can compare name of the input with name of the current user
-            if ($_POST['name'] == $user->name && $_POST['mail'] == $user->mail)
+            if ($_POST['name'] == $user->name && $_POST['mail'] == $user->mail) {
                 echo 'Welcome, ' . $user->name . '<br>';
-            else {
-                echo 'add a new user';
-                // $users[] = ['name' => $user->name, 'mail' => $user->mail];
+                $userExists = true;
+                break;
             }
+        }
+
+        // New member section :
+        if ($userExists == false) {
+            echo 'Welcome new member';
+            // save the user in PHP array
+            $users[] = array('name' => $_POST['name'], 'mail' => $_POST['mail']);
+
+            // convert to JSON string
+            $json = json_encode($users, JSON_PRETTY_PRINT);
+            file_put_contents('users.json', $json);
         }
     }
 }
