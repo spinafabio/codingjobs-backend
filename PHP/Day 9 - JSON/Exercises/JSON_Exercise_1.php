@@ -10,7 +10,6 @@
 		2.2 : If it does, display a welcome message with name and mail.
 		2.3 : If it does not you have to save the user and display "Welcome new member!"
 
-
 	Step 2.3 - Help
 
 		For this step, you have to follow those steps : 
