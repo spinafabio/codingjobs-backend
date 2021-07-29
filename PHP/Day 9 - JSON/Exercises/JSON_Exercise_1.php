@@ -18,6 +18,4 @@
 			* Put the new user in the PHP array
 			* Serialize it back
 			* Save the content in the file
-
- ?>
-
+*/
