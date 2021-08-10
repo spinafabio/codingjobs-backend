@@ -10,7 +10,7 @@
 
 <body>
     <p>How many characters in your name ?</p>
-    <form action="" method="GET">
+    <form action="" method="POST">
         <input type="text" name="first_name" placeholder="First name"><br>
         <input type="text" name="last_name" placeholder="Last name"><br>
         <input type="button" value="Submit">
@@ -21,7 +21,7 @@
     if (isset($_POST['first_name']) && isset($_POST['last_name'])) {
 
         if (empty($_POST['first_name'])) {
-            $errors['first_nme'] = 'First name is mandatory';
+            $errors['first_name'] = 'First name is mandatory';
         }
 
         if (empty($_POST['last_name'])) {
@@ -40,6 +40,7 @@
             echo 'There are some errors !';
         }
     }
+
 
     ?>
 
