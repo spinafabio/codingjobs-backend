@@ -43,24 +43,7 @@
   Make it possible to directly create a HtmlString object
   with string in parentheses :
 
-$markup = new HtmlString('My strinnnnng');
-echo $markup->getBoldString();
-
-
  */
 
-class HtmlString
-{
-  private $string;
-
-
-  public function set_string($s)
-  {
-    $this->string = $s;
-  }
-
-  public function get_string($s)
-  {
-    return $this->string;
-  }
-}
+$markup = new HtmlString('My strinnnnng');
+echo $markup->getBoldString();

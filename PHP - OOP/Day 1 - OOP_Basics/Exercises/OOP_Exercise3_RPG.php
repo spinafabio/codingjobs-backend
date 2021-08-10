@@ -12,7 +12,7 @@
 		> A war-cry (eg "Attaaaaaack!")
 		> There are several types of characters: Humans, Orcs and Elves.
 
-	-- Step 1 :
+	-- Step 1 - 20 Minutes :
 
 	Create a Character class.
 	This class will implement all attributes and methods common to the characters.
@@ -22,12 +22,12 @@
 	$elf = new Character('Elf');
 	$orc = new Character('Orc');
 
-	-- Step 2 :
+	-- Step 2 - 10 min :
 
 	Orcs are not understood by anyone.
 	Their war cry is now: "wwouogrouroulou mlll !!"
 
-	-- Step 3 :
+	-- Step 3 - 20min :
 
 	There are several types of equipment: armor, sword, others (you can add as many as you want).
 
@@ -47,8 +47,7 @@
 	$jewel = new equipment("Grace Necklace", "Jewelry", 0, 0, 5); // 0 atk bonus, 0 def bonus, 5 life bonus;
 	$bestshield = new equipment("BDG", "Shield", 0, 10, 0); // 0 atk bonus, 10 def bonus, 0 life bonus;
 
-
-	-- Step 4 :
+	-- Step 4 - 30 min :
 	
 	A character can now hold an equipment.
 	You have to change the Character class and add a new property : $equipment;
@@ -56,7 +55,7 @@
 	For now, the character can hold only one equipment at a time.
 	You can add/remove/display the equipment for a character (create a method for each action)
 
-	-- Step 5 :
+	-- Step 5 - 30 min :
 
 	A character can now hold many equipments.
 	It's actually an 'inventory' of equipments.

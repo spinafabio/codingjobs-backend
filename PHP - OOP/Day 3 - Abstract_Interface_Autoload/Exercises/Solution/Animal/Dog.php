@@ -2,7 +2,7 @@
 
 class Dog extends Animal
 {
-    public function bark()
+    public function communicate()
     {
         echo 'Woof Woof !<br>';
     }

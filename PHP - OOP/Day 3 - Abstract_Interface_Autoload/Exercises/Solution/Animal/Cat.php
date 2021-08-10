@@ -2,7 +2,7 @@
 
 class Cat extends Animal
 {
-    public function meow()
+    public function communicate()
     {
         echo 'Meooooowww<br>';
     }

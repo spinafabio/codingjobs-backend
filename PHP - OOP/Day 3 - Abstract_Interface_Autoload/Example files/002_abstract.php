@@ -3,6 +3,8 @@
 /*
     Abstraction !
 
+    Abstraction is used when you want to implement 'rules' on children (using inheritance).
+
     An abstract class cannot be instantiate.
     This is meant to be extended by a class.
 

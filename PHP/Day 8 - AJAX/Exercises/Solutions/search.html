@@ -9,36 +9,37 @@
 </head>
 
 <body>
-    
+
     <h2>Search for a movie : </h2>
-    
+
     <form action="" method="post">
         <input type="text" name="searchBox" placeholder="Start typing title">
     </form>
-    
-    <div class="movies_container"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <div id="movies_container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script>
-    /* Wait for the page to be loaded/ready */
-    $(function(){
-        $('input[name="searchBox"]').keyup(function(e) {
-            // Ajax call
-            $.ajax({
-                url: 'search-movie.php' ,
-                method: 'post',
-                data: $('form').serialize()
-            })
-            .done(function (result) {
-                // If AJAX call worked
-                $('#movies_container').html('<h5>Movies list</h5>' + result);
-            })
-            .fail(function (result) {
-                console.log('AJAX FAILED');
+        /* Wait for the page to be loaded/ready */
+        $(function () {
+            $('input[name="searchBox"]').keyup(function (e) {
+                // Ajax call
+                $.ajax({
+                    url: 'search-movie.php',
+                    method: 'post',
+                    data: $('form').serialize()
+                })
+                    .done(function (result) {
+                        // If AJAX call worked
+                        $('#movies_container').html('<h5>Movies list</h5>' + result);
+                    })
+                    .fail(function (result) {
+                        console.log('AJAX FAILED');
+                    });
             });
         });
-    });
 
     </script>
 </body>

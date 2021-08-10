@@ -1,6 +1,6 @@
 <?php
 
-class Creature
+abstract class Creature
 {
     // Protected : Properties accessible within the class and its subclass but not outside.
     protected $_name;
@@ -13,4 +13,6 @@ class Creature
         $this->_color = $color;
         $this->_gender = $gender;
     }
+
+    abstract public function communicate();
 }

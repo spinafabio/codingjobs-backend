@@ -2,5 +2,5 @@
 
 require_once 'CoffeeCup.php';
 
-$cup = new CoffeeCup(20, 'Malongo', 40);
-// Part 5 : Cant use anymore : $cup->setQuantity(20);
+$coffee = new CoffeeCup(30, 'Malongo', 20);
+echo $coffee->reheat(2);

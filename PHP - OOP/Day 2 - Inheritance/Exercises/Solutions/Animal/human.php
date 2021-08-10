@@ -1,6 +1,6 @@
 <?php
 
-class Human extends Creature implements Workers
+class Human extends Creature
 {
     public function work()
     {
@@ -10,10 +10,5 @@ class Human extends Creature implements Workers
     public function talk()
     {
         echo 'blablablablabla';
-    }
-
-    public function makeSound(): string
-    {
-        return 'blabla';
     }
 }

@@ -23,6 +23,5 @@ class Elf extends Adventurer
 
     public function use_power()
     {
-        $this->speed += 3;
     }
 }

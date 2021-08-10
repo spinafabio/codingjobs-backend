@@ -28,6 +28,4 @@
 			- You loop ten times
 			- Each time, you randomly pick a human (or a robot) in the second array
 			- The randomly pick element should work.
-			Each object should be displayed before working.
-			Example : 'The woman Madonna, who is blond, is going to work'.
 

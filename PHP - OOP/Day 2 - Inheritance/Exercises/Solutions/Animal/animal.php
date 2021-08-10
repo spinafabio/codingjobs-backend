@@ -1,6 +1,6 @@
 <?php
 
-abstract class Animal extends Creature
+class Animal extends Creature
 {
     protected $_numberOfLegs;
 
